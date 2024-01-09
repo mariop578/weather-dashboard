@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(
+    to left,
+    #0fd7f1,
+    #00c5f9,
+    #00b1fe,
+    #009afe,
+    #0081f5,
+    #0085f8,
+    #0089fc,
+    #008dff,
+    #00aeff,
+    #00cbff,
+    #00e4fd,
+    #5ffbf1
+  );
+}
+
+#optionsContainer {
+  visibility: hidden;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Weather Dashboard</h1>
+    </header>
+    <h3>Search for a city</h3>
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Enter your search" />
+      <button type="submit" onclick="handleFormSubmit(event)">Submit</button>
+    </form>
+    <div id="optionsContainer">
+      <label for="mySelect">Which State?:</label>
+      <select id="mySelect">
+        <option value="option1">Select an option</option>
+      </select>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
