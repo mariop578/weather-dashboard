@@ -10,7 +10,7 @@
     <header>
       <h1>Weather Dashboard</h1>
     </header>
-    <h3>Search for a city</h3>
+    <h3 id="search-title">Search for a city</h3>
     <form id="searchForm">
       <input type="text" id="searchInput" placeholder="Enter your search" />
       <button type="submit" onclick="handleFormSubmit(event)">Submit</button>
@@ -22,6 +22,8 @@
       </select>
     </div>
     <div id="cardContainer"></div>
+    <h2 id="fivetitle">5-Day Forecast</h2>
+    <div id="fiveday"></div>
   </body>
   <script src="assets/app.js"></script>
 </html>

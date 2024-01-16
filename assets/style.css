@@ -23,3 +23,41 @@ header {
 #optionsContainer {
   visibility: hidden;
 }
+
+#fivetitle {
+  visibility: hidden;
+}
+
+.five-cards {
+  background-color: #424549;
+  color: white;
+  padding: 10px;
+}
+
+#fiveday {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-title {
+  display: flex;
+  justify-content: center;
+}
+
+#optionsContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+#cardContainer {
+  display: flex;
+  justify-content: center;
+}
