@@ -46,9 +46,12 @@ function handleSelect(event, data) {
   const selectedId = selectedOption.id;
   const lon = data[selectedId].lon;
   const lat = data[selectedId].lat;
+  const q = input.value;
+  const lats = [lat, lon];
   console.log(selectEl.value, lon, lat);
   const fiveDayDiv = document.getElementById("fivetitle");
   fiveDayDiv.style.visibility = "visible";
+  saveToLocal(q, lats);
   weatherAPI(lat, lon);
 }
 
@@ -126,7 +129,7 @@ function createCard(data) {
     const formDt = dt.slice(0, -9);
     const id = element.weather[0].id;
     const desc = element.weather[0].description;
-    console.log(temp, humid, wind, dt, id, desc);
+    // console.log(temp, humid, wind, dt, id, desc);
     const card = document.createElement("div");
     const dtH3 = document.createElement("h3");
     const tempP = document.createElement("p");
@@ -183,3 +186,42 @@ function getEmoji(id) {
       return "?";
   }
 }
+
+function saveToLocal(q, lats) {
+  localStorage.setItem(q, lats);
+}
+
+function displayPreviousSearch() {
+  // get data from local
+  //Check if there is previous data if not dont display
+  // add to container
+  // Add buttons with event listeners
+  const allItems = {};
+
+  // Iterate over keys and retrieve values got from chatGPT
+  Object.keys(localStorage).forEach((key) => {
+    allItems[key] = localStorage.getItem(key);
+    console.log(key);
+    const button = document.createElement("button");
+    button.id = key;
+    const capitalCity = capitalizeAfterSpace(key);
+    button.innerText = capitalCity;
+    const prevContainer = document.getElementById("previousSearches");
+    prevContainer.appendChild(button);
+    button.addEventListener("click", (e) => {
+      const buttonId = button.id;
+      const item = localStorage.getItem(buttonId);
+      const itemSplit = item.split(",");
+      const lat = itemSplit[0];
+      const lon = itemSplit[1];
+      console.log(item);
+      weatherAPI(lat, lon);
+      // console.log(item);
+    });
+  });
+
+  return allItems;
+}
+
+const items = displayPreviousSearch();
+console.log(items);
