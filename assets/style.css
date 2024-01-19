@@ -61,3 +61,7 @@ form {
   display: flex;
   justify-content: center;
 }
+
+#previousSearches {
+  padding: 20px;
+}
